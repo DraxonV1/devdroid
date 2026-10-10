@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="title">DEVDROID</div>
+      <div id="statusBadge" class="badge idle">Idle</div>
+    </div>
+
+    <div class="card">
+      <div class="stats-row">
+        <span>Captured Events</span>
+        <span id="eventCount" class="stats-val">0</span>
+      </div>
+      <button id="toggleBtn" class="btn-main">Start Capture</button>
+      <label class="toggle-row">
+        <input type="checkbox" id="enableDebugger">
+        <span>Control Mode (CDP / Debugger)</span>
+      </label>
+      <div class="toggle-hint">Required for MCP remote control.</div>
+    </div>
+
+    <div class="card">
+      <div style="display: flex; gap: 8px;">
+        <button id="exportBtn" class="btn-accent">Export JSONL</button>
+        <button id="clearBtn" class="btn-secondary" style="width: 35%;">Clear</button>
+      </div>
+      <div class="section-title">Backend / MCP API</div>
+      <div id="urlDisplay" class="url-box">Local Only (No server)</div>
+      <button id="editUrlBtn" class="btn-secondary">Change API URL</button>
+    </div>
+
+    <div class="card">
+      <div class="section-title">Saved Exports</div>
+      <div id="historyList" class="history-list">
+        <div class="empty-state">No exports yet</div>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

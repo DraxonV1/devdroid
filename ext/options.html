@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>DevDroid Settings</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --success: #238636;
+      --danger: #da3633;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      padding: 20px 16px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    h2 {
+      font-size: 18px;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-size: 14px;
+      font-family: monospace;
+    }
+    input[type="text"]:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .help {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    button {
+      flex: 1;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+    .btn-save { background: var(--success); color: #fff; }
+    .btn-local { background: #21262d; border-color: var(--border); color: var(--text); }
+    .msg {
+      font-size: 13px;
+      padding: 8px;
+      border-radius: 4px;
+      display: none;
+    }
+    .msg.ok { display: block; background: rgba(35, 134, 54, 0.2); color: #7ee787; border: 1px solid var(--success); }
+  </style>
+</head>
+<body>
+  <h2>DevDroid API Configuration</h2>
+  <div class="card">
+    <label for="urlInput">BACKEND / MCP SERVER URL</label>
+    <input type="text" id="urlInput" placeholder="http://192.168.1.5:8765/api/log">
+    <div class="help">
+      Enter the full URL including port and path. For example: <code>http://YOUR_PC_IP:8765/api/log</code>.
+      <br>Clear input or click "Use Local Mode" to stop sending traffic to any server.
+    </div>
+
+    <div id="statusMsg" class="msg">Settings saved!</div>
+
+    <div class="btn-row">
+      <button id="saveBtn" class="btn-save">Save URL</button>
+      <button id="localBtn" class="btn-local">Use Local Mode</button>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

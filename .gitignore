@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Captured logs & dumps
+*.jsonl
+devdroid_captured_events.jsonl
+test_screenshot.jpg
+*.log
+
+# Dev artifacts
+.env
+.venv
+env/
+venv/
+.DS_Store
+Thumbs.db

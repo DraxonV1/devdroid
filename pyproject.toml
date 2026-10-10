@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "devdroid"
+version = "1.0.0"
+description = "Real-time mobile and desktop browser remote control MCP server and DevTools CDP bridge for AI agents"
+readme = "README.md"
+authors = [{ name = "DevDroid" }]
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = [
+    "mcp>=1.0.0",
+    "requests>=2.28.0",
+    "fastapi>=0.95.0",
+    "uvicorn>=0.20.0",
+    "easygradients>=0.1.0"
+]
+[project.urls]
+Homepage = "https://github.com/DraxonV1/devdroid"
+Repository = "https://github.com/DraxonV1/devdroid.git"
+
+[project.scripts]
+devdroid = "devdroid_mcp:main"
+devdroid-mcp = "devdroid_mcp:main"
+devdroid-server = "server:main"
+[tool.setuptools]
+package-dir = {"" = "py"}
+py-modules = ["devdroid_mcp", "server", "storage", "client", "logger", "cdp_specs"]

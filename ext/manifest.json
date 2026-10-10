@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "DevDroid Traffic Capture",
+  "version": "1.0.0",
+  "description": "Real-time mobile and desktop browser remote control MCP server and DevTools CDP bridge for AI agents",
+  "permissions": [
+    "debugger",
+    "tabs",
+    "activeTab",
+    "storage",
+    "webRequest",
+    "webRequestAuthProvider",
+    "cookies",
+    "downloads",
+    "unlimitedStorage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "DevDroid Capture"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}

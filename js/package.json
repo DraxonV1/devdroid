@@ -1,0 +1,52 @@
+{
+  "name": "devdroid",
+  "version": "1.0.0",
+  "description": "Real-time mobile and desktop browser remote control MCP server and DevTools CDP bridge for AI agents",
+  "main": "index.js",
+  "bin": {
+    "devdroid": "index.js",
+    "devdroid-mcp": "index.js",
+    "devdroid-server": "server.js"
+  },
+  "type": "module",
+  "files": [
+    "index.js",
+    "server.js",
+    "storage.js",
+    "client.js",
+    "tools_def.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "devtools",
+    "browser-automation",
+    "cdp",
+    "chrome",
+    "ai-agent"
+  ],
+  "author": "DevDroid",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DraxonV1/devdroid.git"
+  },
+  "homepage": "https://github.com/DraxonV1/devdroid#readme",
+  "bugs": {
+    "url": "https://github.com/DraxonV1/devdroid/issues"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "server": "node server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
