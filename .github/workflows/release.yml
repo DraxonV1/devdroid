@@ -59,11 +59,11 @@ jobs:
           cd js
           npm ci || npm install
 
-      # Publishes using OIDC Trusted Publishing; if already published, continues gracefully
+      # Publish using NPM_TOKEN or OIDC provenance
       - name: Publish to NPM
         run: |
           cd js
-          npm publish --provenance --access public || echo "Version already published or token skipped"
+          npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
