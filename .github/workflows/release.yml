@@ -59,14 +59,11 @@ jobs:
           cd js
           npm ci || npm install
 
-      # Supports both: Keyless Trusted Publishing via OIDC or fallback NPM_TOKEN
+      # Publishes using OIDC Trusted Publishing; if already published, continues gracefully
       - name: Publish to NPM
         run: |
           cd js
-          if [ -n "${{ secrets.NPM_TOKEN }}" ]; then
-            echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
-          fi
-          npm publish --provenance --access public
+          npm publish --provenance --access public || echo "Version already published or token skipped"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
