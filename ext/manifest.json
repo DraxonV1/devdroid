@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "DevDroid Traffic Capture",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Real-time mobile and desktop browser remote control MCP server and DevTools CDP bridge for AI agents",
   "permissions": [
     "debugger",
